@@ -1,0 +1,30 @@
+
+
+{% extends 'base.html' %}
+
+{% block title %}Digital Marketing And Web App Development for Small Businesses{% endblock %}
+
+{% block content %}
+
+
+<div class="container">
+    {% for project in projects %}
+  <div class="row project-row">
+    <div class="col-sm-4">
+      <h3>{{project.title}}</h3>
+      <img src="{{project.main_image.url}}" alt="">
+
+    </div>
+    <div class="col-sm-8 project-right-div">
+
+      <p><em>{{project.service}}</em></p>
+      <p>{{project.description}}</p>
+      <p><strong>URL: </strong><a rel="nofollow" href="{{project.url}}">{{project.url}}</a></p>
+    </div>
+  </div>
+  {% endfor %}
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}FallBack Title{% endblock %} | Summit Digital</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    {% load staticfiles %}
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'sitepages/styles.css' %}" />
+  </head>
+  <body>
+
+
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">
+          <img alt="Summit Logo" src="{% static 'sitepages/summit-logo1.png' %}">
+        </a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-nav-demo">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Our Services <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="{% url 'service_detail' service_id=3 slug="custom-website-development" %}">Custom Websites</a></li>
+            <li><a href="{% url 'service_detail' service_id=1 slug="search-engine-optimization" %}">Search Engine Optimization</a></li>
+            <li><a href="{% url 'service_detail' service_id=2 slug="pay-per-click-advertising" %}">Pay-Per-Click Advertising</a></li>
+          </ul>
+        </li>
+        <li><a href="{% url 'seo_tool' %}">Small Business SEO Tool</a></li>
+        <li><a href="{% url 'blog_index' %}">Blog</a></li>
+        <li><a href="{% url 'contact' %}">Contact</a></li>
+      </ul>
+    </div>
+      <div class="collapse navbar-collapse" id="bs-nav-demo">
+        <ul class="nav navbar-nav navbar-right">
+        </ul>
+      </div>
+    </div>
+    </nav>
+<div>
+{% block content %}
+{% endblock %}
+</div>
+<section id="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-sm-12">
+        <p><strong><u>Navigation</u></strong></p>
+        <a href="{% url 'home' %}"><p>Home</p></a>
+        <a href="{% url 'blog_index' %}"><p>Blog</p></a>
+        <a href="{% url 'contact' %}"><p>Contact</p></a>
+        <a href="{% url 'seo_tool' %}"><p>Small Business SEO Tool</p></a>
+      </div>
+      <div class="col-md-4 col-sm-12">
+        <p><strong><u>Services</u></strong></p>
+        <a href="{% url 'service_detail' service_id=3 slug="custom-website-development" %}"><p>Custom Web Design</p></a>
+        <a href="{% url 'service_detail' service_id=1 slug="search-engine-optimization" %}"><p>Search Engine Optimization</p></a>
+        <a href="{% url 'service_detail' service_id=2 slug="pay-per-click-advertising" %}"><p>Pay-Per-Click Advertising</p></a>
+      </div>
+      <div class="col-md-4 col-sm-12">
+        <p><strong><u>Summit Digital Marketing</u></strong></p>
+        <p>info@summitdigital.com</p>
+        <p>(888) 888-8888</p>
+        <p></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.js"
+      integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+      crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="{% static 'sitepages/summit.js' %}"></script>
+  </body>
+</html>

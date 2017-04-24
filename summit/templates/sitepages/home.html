@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block title %}Digital Marketing And Web App Development for Small Businesses{% endblock %}
+
+{% block content %}
+
+{% load static %}
+
+<section id="home-landing">
+      <div class="container">
+        <h1>Summit Digital</h1>
+        <h3>Custom Websites and Digital Marketing Strategies for Small and Medium Businesses</h3><br><br><br>
+        <a href="{% url 'contact' %}"><span  class="btn btn-default landing-button">Contact Summit</span></a>
+      </div>
+</section>
+
+<section id="about-us">
+          <div class="container">
+            <h2>About Our Team</h2><br>
+            <p>Founded by a dedicated group of Website Developers, Designers and Veteran Digital Marketers, Summit Digital was created to help small and medium-sized businesses not only survive, but to thrive online. We specialize in building modern, beautiful and mobile-responsive websites for a variety of industries across the United States. Further, we help these small & medium-sized businesses market their website through a cohevsive digital marketing strategy that encompasses both Search Engine Optimization and Pay-Per-Click Advertising.</p>
+            <p> Every year, it grows harder and harder to compete online. In today's digital world, it is imperative that your business have a stellar website as well as a cohesive digital marketing strategy. Will your business be the one left behind in this digital age, or will your business reap the rewards of marketing online? Contact Summit Digital to find out how we can help you succeed. </p>
+          </div>
+</section>
+
+<section id="midpage">
+  <div class="container">
+    <div class="row" id="services">
+      {% for service in services.all %}
+      <div class="col-lg-4 col-md-4 col-sm-12">
+        <div class="service-item">
+          <img src="{{ service.icon.url }}" alt="Service Icon">
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.summary }}</p>
+          <a href="{{ service.get_absolute_url }}"><span class="btn btn-default services-button">Learn More</span></a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="second-landing">
+      <div class="container">
+        <div class="home-seo-tool-info">
+          <h2>Test your website's search engine optimization with our free tool!</h2><br>
+          <p>As local business digital marketing experts, we know that getting traffic from the search engines like Google and Bing can have a powerful impact on your local business. That's why we have built this free tool to help local businesses figure out how well their website is optimized for the various search engines, and let's them know areas they could improve upon. Check out the results for your website today!</p><br>
+          <a href="{% url 'seo_tool' %}"><p class="btn btn-default" id="seo-button">Test Your Site</p></a>
+        </div>
+      </div>
+</section>
+
+<section id="blog-info">
+      <div class="container">
+        <h2>Our Recent Projects</h2>
+        <div class="row" id="blog-posts">
+          <div class="col-lg-4 col-sm-4 col-xs-12">
+            <a href="{%url 'project_index'%}"><div class="home-project-img" id="home-dragonfly">
+              <img src="{% static "sitepages/dragonfly.jpg" %}" class="dragonfly-hover" alt="Dragonfly Inn">
+              <img src="{% static "sitepages/dragonflyinfo2.jpg" %}" id="dragonfly-hide" alt="Dragonfly Inn">
+            </div></a>
+          </div>
+          <div class="col-lg-4 col-sm-4 col-xs-12">
+            <a href="{%url 'project_index'%}"><div class="home-project-img" id="home-wtc">
+              <img src="{% static "sitepages/wtc.jpg" %}" id="wtc-hover" alt="W. Taylor Corbett">
+              <img src="{% static "sitepages/wtcinfo2.jpg" %}" id="wtc-hide" alt="W. Taylor Corbett">
+            </div></a>
+            </div>
+          <div class="col-lg-4 col-sm-4 col-xs-12">
+            <a href="{%url 'project_index'%}"><div class="home-project-img" id="home-party">
+                <img src="{% static "sitepages/party.jpg" %}" id="party-hover" alt="Premier Party Rentals">
+                <img src="{% static "sitepages/partyinfo2.jpg" %}" id="party-hide" alt="Premier Party Rentals">
+            </div></a>
+          </div>
+        </div>
+      </div>
+</section>
+{% endblock %}

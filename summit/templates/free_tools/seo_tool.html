@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %}Free On-Page SEO Tool{% endblock %}
+
+{% block content %}
+
+  <section class="service-info">
+    <div class="container">
+      <h2><strong>Get a free on-page SEO scan for your local business!</strong></h2>
+      <p>This tool was developed to help small businesses see how optimized their websites are for search engines, and advise them of areas they can improve. To use this tool, simply enter the URL of your webpage followed by the keyword and location you are trying to target.</p>
+      <hr>
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-xs-12 seo-tool-info">
+          <h4>Here are some of the things this tool checks:</h4>
+          <p><i class="fa fa-check-square-o" aria-hidden="true"></i>    The length of your page title</p>
+          <p><i class="fa fa-check-square-o" aria-hidden="true"></i>    The presence of a Meta Description</p>
+          <p><i class="fa fa-check-square-o" aria-hidden="true"></i>    Checks that there is only one H1 (header) on the page</p>
+          <p><i class="fa fa-check-square-o" aria-hidden="true"></i>    Checks for the presence of H2s, H3s, etc.</p>
+          <p><i class="fa fa-check-square-o" aria-hidden="true"></i>    Checks that your keyword and location are in your H1 tag</p>
+          <p><i class="fa fa-check-square-o" aria-hidden="true"></i>    Checks if you have any broken images</p>
+          <p><i class="fa fa-check-square-o" aria-hidden="true"></i>    Makes sure your images have Alt Attributes</p>
+          <p><i class="fa fa-check-square-o" aria-hidden="true"></i>    The length of your content - checks that it's at least 400 words</p>
+          <p><i class="fa fa-check-square-o" aria-hidden="true"></i>    Calculates "Keyword Density" and "Location Keyword Density"</p>
+        </div>
+        <div class="col-lg-6 col-md-6 col-xs-12 seo-tool-info">
+          <form action="" method="post">
+            <div class="form-group">
+              {% if errors_list %}
+                  {% for er in errors_list %}
+                    <p><strong>{{er}}</strong></p>
+                    <hr />
+                  {% endfor %}
+
+                  {% endif %}
+
+              {{form.as_p}}
+              {% csrf_token %}
+
+              <input type="submit" class="btn btn-primary" value="Submit">
+              <p><em>*Note on the Location: Because of the many variations your location may appear on your page (for example, if your location was Richmond, Virginia that may appear on your page as Richmond, Va; Richmond, Virginia or just Richmond), so for best results, just put in the name of your location while leaving off any state identifier(for our example of Richmond, Virginia just put "Richmond" for best results).</em></p>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="contact-button">
+        <hr>
+        <h4>Have any questions or concerns about this tool? Contact us now!</h4>
+        <a href="{% url 'contact' %}"><p class="btn btn-default landing-button">Contact Summit</p></a>
+      </div>
+    </div>
+  </section>
+
+
+{% endblock %}

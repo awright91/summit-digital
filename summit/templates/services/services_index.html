@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Our Digital Services{% endblock %}
+
+{% block content %}
+
+
+<div class="container">
+  <h1 id="services_index_header">Check out the Services we offer:</h1>
+{% for service in services.all %}
+<div class="row service-row">
+  <div class="col-sm-5 service-left">
+          <h2>{{service.title}}</h2>
+          <img src="{{ service.icon.url }}" alt="service icon">
+  </div>
+  <div class="col-sm-7 service-desc">
+          <p>{{service.summary}}</p>
+  </div>
+</div>
+{% endfor %}
+</div>
+{% endblock %}

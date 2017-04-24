@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Digital Marketing And Web App Development for Small Businesses{% endblock %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row" id="contact-row">
+    <h2>Contact Summit Digital now to learn more about how we can help you!</h2>
+    <div class="col-sm-6 col-sm-offset-3">
+        <form action="" method="post">
+            {{form.as_p}}
+            {% csrf_token %}
+            <input type="submit" class="btn btn-primary btn-block btn-lg" value="Send Us a Message">
+            <br>
+            <br>
+        </form>
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+{% endblock %}

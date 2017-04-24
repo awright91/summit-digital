@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %} {{service.title}} for Small Businesses {% endblock %}
+
+{% block content %}
+
+
+  <section id="seo-landing">
+  <div class="container service-landing">
+    <h1>{{service.title}} for Small & Medium Sized Businesses</h1>
+    <h3>{{service.tagline}}</h3><br>
+  </div>
+</section>
+
+<section class="service-info">
+  <div class="container">
+    <p>{{ service.description |linebreaks}}</p>
+    <hr>
+
+    <h3><strong>What You Get</strong></h3>
+    <div class="row">
+      <div class="col-lg-3 col-md-6 col-xs-12 seo-process">
+        <h4>{{service.reason_1_title}}</h4>
+        <p>{{ service.reason_1_description }}</p>
+      </div>
+      <div class="col-lg-3 col-md-6 col-xs-12 seo-process">
+        <h4>{{service.reason_2_title}}</h4>
+        <p>{{ service.reason_2_description }}</p>
+      </div>
+      <div class="col-lg-3 col-md-6 col-xs-12 seo-process">
+        <h4>{{service.reason_3_title}}</h4>
+        <p>{{ service.reason_3_description }}</p>
+      </div>
+      <div class="col-lg-3 col-md-6 col-xs-12 seo-process">
+        <h4>{{service.reason_4_title}}</h4>
+        <p>{{ service.reason_4_description }}</p>
+      </div>
+    </div>
+    <div class="contact-button">
+      <a href="{% url 'contact' %}"><p type="button" class="btn btn-default landing-button">Contact Summit</p></a>
+    </div>
+  </div>
+</section>
+
+
+{% endblock %}

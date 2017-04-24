@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %}Free On-Page SEO Tool{% endblock %}
+
+{% block content %}
+
+<section class="service-info">
+  <div class="container">
+    <h2><strong>Your Results</strong></h2>
+    <hr>
+    <div class="row">
+      <div class="col-md-3 col-xs-12 seo-tool-results">
+        <p><strong>Passing Checks</strong></p>
+        <h2>{{ passing_count }}</h2>
+      </div>
+      <div class="col-md-3 col-xs-12 seo-tool-results">
+        <p><strong>Errors on Page</strong></p>
+        <h2>{{ errors_count }}</h2>
+      </div>
+      <div class="col-md-3 col-xs-12 seo-tool-results">
+        <p><strong>Keyword Density</strong></p>
+        <h2>{{ kw_density }}%</h2>
+      </div>
+      <div class="col-md-3 col-xs-12 seo-tool-results">
+        <p><strong>Location Keyword Density</strong></p>
+        <h2>{{ location_density }}%</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-xs-12">
+        <div class="results-box">
+              <h3>Areas That Passed</h3>
+              {% for passing in passing_list %}
+              <p><i class="fa fa-check-square-o" aria-hidden="true"></i> {{passing}}</p>
+              {% endfor %}
+          </div>
+      </div>
+      <div class="col-md-6 col-xs-12">
+        <div class="results-box">
+        <h3>Areas to Improve</h3>
+        {% for er in errors_list %}
+        <p><i class="fa fa-check-square-o" aria-hidden="true"></i> {{ er }}</p>
+        {% endfor %}
+      </div>
+      </div>
+    </div>
+    <div class="contact-button">
+      <hr>
+      <h4>Need some help fixing the above errors on your site? Contact Summit Digital now!</h4>
+      <a href="{% url 'contact' %}"><p type="button" class="btn btn-default landing-button">Contact Summit</p></a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
